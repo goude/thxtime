@@ -2,7 +2,8 @@ from __future__ import print_function
 import json
 import os
 import time
-from datetime import datetime
+import datetime
+from datetime import datetime as dt
 
 
 def time_string(t):
@@ -32,15 +33,16 @@ def thx_time(t):
 
 
 def thx_time_extended(t):
-    time_str = '{} {}'.format(
-        datetime.utcnow().strftime('%H:%M'),
+    time_str = 'W{} {} {}'.format(
+        dt.now().isocalendar()[1],
+        dt.utcnow().strftime('%H:%M'),
         time_string(t)
     )
     return time_str
 
 
 def main():
-    now = datetime.fromtimestamp(time.time()).time()
+    now = dt.fromtimestamp(time.time()).time()
     print(thx_time_extended(now))
 
 
