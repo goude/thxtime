@@ -11,7 +11,8 @@ def time_string(t):
 
     with open(datafile, 'rb') as data_fh:
         data = json.load(data_fh)
-        return render_time(t, data)
+
+    return render_time(t, data)
 
 
 def render_time(t, data):
@@ -30,9 +31,17 @@ def thx_time(t):
     return time_string(t)
 
 
+def thx_time_extended(t):
+    time_str = '{} {}'.format(
+        datetime.utcnow().strftime('%H:%M'),
+        time_string(t)
+    )
+    return time_str
+
+
 def main():
     now = datetime.fromtimestamp(time.time()).time()
-    print(thx_time(now))
+    print(thx_time_extended(now))
 
 
 if __name__ == '__main__':
