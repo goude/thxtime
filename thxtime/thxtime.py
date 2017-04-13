@@ -33,9 +33,10 @@ def thx_time(t):
 
 
 def thx_time_extended(t):
-    time_str = 'W{} {} {}'.format(
+    time_str = '{} W{} {}|{}'.format(
+        dt.now().strftime('%d/%m'),
         dt.now().isocalendar()[1],
-        dt.utcnow().strftime('%H:%M'),
+        dt.utcnow().strftime('%H'),
         time_string(t)
     )
     return time_str
