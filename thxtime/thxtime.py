@@ -31,15 +31,38 @@ def render_time(t, data):
 def thx_time(t):
     return time_string(t)
 
+# https://stackoverflow.com/questions/1969240/mapping-a-range-of-values-to-another
+def translate(value, leftMin, leftMax, rightMin, rightMax):
+    # Figure out how 'wide' each range is
+    leftSpan = leftMax - leftMin
+    rightSpan = rightMax - rightMin
+
+    # Convert the left range into a 0-1 range (float)
+    valueScaled = float(value - leftMin) / float(leftSpan)
+
+    # Convert the 0-1 range into a value in the right range.
+    return rightMin + (valueScaled * rightSpan)
+
+def second_spinner(t):
+    symbols = [
+        '◷',
+        '◶',
+        '◵',
+        '◴',
+    ]
+    index = int(translate(t.second, 0, 60, 0, 4))
+    return symbols[index]
 
 def thx_time_extended(t):
-    time_str = '{} W{} {}|{}'.format(
+    time_str = '{} W{} {}|{} {}'.format(
         dt.now().strftime('%d/%m'),
         dt.now().isocalendar()[1],
         dt.utcnow().strftime('%H'),
-        time_string(t)
+        time_string(t),
+        second_spinner(t)
     )
     return time_str
+
 
 
 def main():
