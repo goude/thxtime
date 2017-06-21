@@ -54,7 +54,7 @@ def second_spinner(t):
     return symbols[index]
 
 def thx_time_extended(t):
-    time_str = '{} W{} {}|{} {}'.format(
+    time_str = '{} W{} {}·{} {}'.format(
         dt.now().strftime('%d/%m'),
         dt.now().isocalendar()[1],
         dt.utcnow().strftime('%H'),
