@@ -7,11 +7,11 @@ def time_string(t):
     data = {
         "3:14": "π",
         "6:28": "τ",
-        "1066": "Hastings",
+        "11:06": "Hastings",  # 10:66 = 10:60 + 6 = 11:06
         "11:38": "THX",
         "13:37": "Teel",
         "15:17": "95LUTH",
-        "221b":  "Baker St."
+        "22:27": "Baker St."  # 1B = 27
     }
 
     return render_time(t, data)
@@ -55,9 +55,9 @@ def second_spinner(t):
     return symbols[index]
 
 def thx_time_extended(t):
-    time_str = '{} W{} {}·{} {}'.format(
-        dt.now().strftime('%d/%m'),
+    time_str = 'W{} {} U{}·{} {}'.format(
         dt.now().isocalendar()[1],
+        dt.now().strftime('%m-%d'),
         dt.utcnow().strftime('%H'),
         time_string(t),
         second_spinner(t)
