@@ -9,6 +9,5 @@ while [ -h "$SOURCE"  ]; do # resolve $SOURCE until the file is no longer a syml
       done
       DIR="$( cd -P "$( dirname "$SOURCE"  )" && pwd  )"
 cd "$DIR"
-cd ..
 
 THXTIME_PATH=`pwd` python -m thxtime.thxtime "$@"

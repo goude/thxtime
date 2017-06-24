@@ -1,17 +1,18 @@
 from __future__ import print_function
-import json
-import os
 import time
-import datetime
 from datetime import datetime as dt
 
 
 def time_string(t):
-    thxtime_path = os.environ['THXTIME_PATH']
-    datafile = os.path.join(thxtime_path, 'data/thxdata.json')
-
-    with open(datafile, 'rb') as data_fh:
-        data = json.load(data_fh)
+    data = {
+        "3:14": "π",
+        "6:28": "τ",
+        "1066": "Hastings",
+        "11:38": "THX",
+        "13:37": "Teel",
+        "15:17": "95LUTH",
+        "221b":  "Baker St."
+    }
 
     return render_time(t, data)
 
@@ -62,7 +63,6 @@ def thx_time_extended(t):
         second_spinner(t)
     )
     return time_str
-
 
 
 def main():
