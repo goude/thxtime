@@ -16,7 +16,7 @@ def translate(value, leftMin, leftMax, rightMin, rightMax):
     return rightMin + (valueScaled * rightSpan)
 
 
-def second_spinner(t):
+def second_spinner(dt):
     '''
     Given a datetime, return a symbol string representing the number
     of seconds.
@@ -27,15 +27,15 @@ def second_spinner(t):
         '◵',
         '◴',
     ]
-    index = int(translate(t.second, 0, 60, 0, 4))
+    index = int(translate(dt.second, 0, 60, 0, 4))
     return symbols[index]
 
 
 def thx_time(dt):
     ''' Given a datetime, return a string representing the current time.'''
     data = {
-        "3:14": "π",
-        "6:28": "τ",
+        "03:14": "π",
+        "06:28": "τ",
         "11:06": "Hastings",  # 10:66 = 10:60 + 6 = 11:06
         "11:38": "THX",
         "13:37": "Teel",
