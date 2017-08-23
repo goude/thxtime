@@ -34,17 +34,18 @@ def second_spinner(dt):
 def thx_time(dt):
     ''' Given a datetime, return a string representing the current time.'''
     data = {
-        "03:14": "π",
-        "06:28": "τ",
-        "11:06": "Hastings",  # 10:66 = 10:60 + 6 = 11:06
-        "11:38": "THX",
-        "13:37": "Teel",
-        "15:17": "95LUTH",
-        "22:27": "Baker St."  # 1B = 27
+        '03:14': 'π',
+        '06:28': 'τ',
+        '11:06': 'Hastings',  # 10:66 = 10:60 + 6 = 11:06
+        '11:38': 'THX',
+        '13:37': 'Teel',
+        '15:17': '95LUTH',
+        '22:27': 'Baker St.',  # 1B = 27
+        '25:17': 'Ezekiel',
     }
 
-    current_time_24 = dt.strftime("%H:%M")
-    current_time_12 = dt.strftime("%I:%M")
+    current_time_24 = dt.strftime('%H:%M')
+    current_time_12 = dt.strftime('%I:%M')
 
     if current_time_24 in data:
         return data[current_time_24]
