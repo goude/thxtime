@@ -34,14 +34,14 @@ def second_spinner(dt):
 def thx_time(dt):
     ''' Given a datetime, return a string representing the current time.'''
     data = {
+        '01:17': 'Ezekiel',    # 25 = 01
         '03:14': 'π',
         '06:28': 'τ',
-        '11:06': 'Hastings',  # 10:66 = 10:60 + 6 = 11:06
+        '11:06': 'Hastings',   # 10:66 = 10:60 + 6 = 11:06
         '11:38': 'THX',
         '13:37': 'Teel',
         '15:17': '95LUTH',
         '22:27': 'Baker St.',  # 1B = 27
-        '25:17': 'Ezekiel',
     }
 
     current_time_24 = dt.strftime('%H:%M')
@@ -60,7 +60,8 @@ def thx_time_extended(dt):
     '''
     time_str = 'W{}  {} U{}·{} {}'.format(
         dt.now().isocalendar()[1],
-        dt.now().strftime('%m-%d'),
+        # dt.now().strftime('%m-%d'),
+        dt.now().strftime('%b %d'),
         dt.utcnow().strftime('%H'),
         thx_time(dt),
         second_spinner(dt)
