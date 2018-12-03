@@ -22,12 +22,14 @@ def second_spinner(dt):
     of seconds.
     '''
     symbols = [
-        '◷',
-        '◶',
-        '◵',
-        '◴',
+        '',
+        '',
+        '',
+        '',
+				'',
+				'',
     ]
-    index = int(translate(dt.second, 0, 60, 0, 4))
+    index = int(translate(dt.second, 0, 60, 0, 5))
     return symbols[index]
 
 
@@ -58,7 +60,7 @@ def thx_time(dt):
 def thx_time_extended(dt):
     ''' Given a datetime, return a string representing several time measures.
     '''
-    time_str = 'W{}  {} U{}·{} {}'.format(
+    time_str = '磌{}  {}  {}·{} {}'.format(
         dt.now().isocalendar()[1],
         # dt.now().strftime('%m-%d'),
         dt.now().strftime('%b %d'),
