@@ -1,6 +1,17 @@
 from __future__ import print_function
 import time
+import random
 import datetime
+
+
+DICE = [
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+]
 
 
 # https://stackoverflow.com/questions/1969240/mapping-a-range-of-values-to-another
@@ -21,16 +32,8 @@ def second_spinner(dt):
     Given a datetime, return a symbol string representing the number
     of seconds.
     '''
-    symbols = [
-        '',
-        '',
-        '',
-        '',
-				'',
-				'',
-    ]
     index = int(translate(dt.second, 0, 60, 0, 5))
-    return symbols[index]
+    return DICE[index]
 
 
 def thx_time(dt):
@@ -57,6 +60,16 @@ def thx_time(dt):
         return current_time_24
 
 
+def D6(n=3):
+    dice = []
+    for i in range(n):
+        roll = random.randint(1, 6)
+        dice.append(roll)
+        DICE[roll - 1]
+    diestr = ' '.join([DICE[d - 1] for d in dice])
+    return '%s 烈%d' % (diestr, sum(dice))
+
+
 def thx_time_extended(dt):
     ''' Given a datetime, return a string representing several time measures.
     '''
@@ -66,7 +79,8 @@ def thx_time_extended(dt):
         dt.now().strftime('%b %d'),
         dt.utcnow().strftime('%H'),
         thx_time(dt),
-        second_spinner(dt)
+        D6(3),
+        # second_spinner(dt)
     )
     return time_str
 
