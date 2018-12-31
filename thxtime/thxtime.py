@@ -79,7 +79,7 @@ def thx_time_extended(dt):
         dt.now().strftime('%b %d'),
         dt.utcnow().strftime('%H'),
         thx_time(dt),
-        D6(3),
+        # D6(3),
         # second_spinner(dt)
     )
     return time_str
