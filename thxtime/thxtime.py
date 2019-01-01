@@ -73,12 +73,12 @@ def D6(n=3):
 def thx_time_extended(dt):
     ''' Given a datetime, return a string representing several time measures.
     '''
-    time_str = '冀{}  {} 爵{}  {} {}'.format(
+    time_str = '冀{}  {} 爵{}  {}'.format(
         dt.now().isocalendar()[1],
         # dt.now().strftime('%m-%d'),
         dt.now().strftime('%b %d'),
         dt.utcnow().strftime('%H'),
-        thx_time(dt),
+        thx_time(dt)
         # D6(3),
         # second_spinner(dt)
     )
