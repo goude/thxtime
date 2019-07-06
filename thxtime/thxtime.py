@@ -61,11 +61,15 @@ def thx_time(dt):
 
 
 def D6(n=3):
+    return Dx(x=6, n=n)
+
+
+def Dx(x=6, n=3):
     dice = []
     for i in range(n):
         roll = random.randint(1, 6)
         dice.append(roll)
-        DICE[roll - 1]
+        # DICE[roll - 1]
     diestr = ' '.join([DICE[d - 1] for d in dice])
     return '%s 烈%d' % (diestr, sum(dice))
 
@@ -73,12 +77,12 @@ def D6(n=3):
 def thx_time_extended(dt):
     ''' Given a datetime, return a string representing several time measures.
     '''
-    time_str = '冀{}  {} 爵{}  {}'.format(
+    time_str = '冀{}  {}  ({}){}'.format(
         dt.now().isocalendar()[1],
         # dt.now().strftime('%m-%d'),
-        dt.now().strftime('%b %d'),
+        dt.now().strftime('%d/%m'),
         dt.utcnow().strftime('%H'),
-        thx_time(dt)
+        thx_time(dt),
         # D6(3),
         # second_spinner(dt)
     )
