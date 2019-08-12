@@ -81,7 +81,7 @@ def thx_time_extended(dt):
     time_str = '冀{}  {}  ({}){}'.format(
         dt.now().isocalendar()[1],
         # dt.now().strftime('%m-%d'),
-        dt.now().strftime('%d/%m'),
+        dt.now().strftime('%y-%m-%d'),
         dt.utcnow().strftime('%H'),
         thx_time(dt),
         # D6(3),
