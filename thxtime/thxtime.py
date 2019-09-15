@@ -78,7 +78,8 @@ def Dx(x=6, n=3):
 def thx_time_extended(dt):
     ''' Given a datetime, return a string representing several time measures.
     '''
-    time_str = '冀{}  {}  ({}){}'.format(
+    #time_str = '冀{}  {}  ({}){}'.format(
+    time_str = 'W{}  {}  ({}){}'.format(
         dt.now().isocalendar()[1],
         # dt.now().strftime('%m-%d'),
         dt.now().strftime('%y-%m-%d'),
